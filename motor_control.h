@@ -15,7 +15,6 @@ void turnLeft(int speed);
 void turnRight(int speed);
 void stopAll();
 void setMotorRaw(int pwmPin, int in1, int in2, int speed);
-void setMotorL298N(int enPin, int in1, int in2, int speed);
 int clamp255(long v);
 void enableMotors();
 void disableMotors();

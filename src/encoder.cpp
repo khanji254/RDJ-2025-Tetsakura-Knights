@@ -54,36 +54,3 @@ void initializeEncoders() {
   attachInterrupt(digitalPinToInterrupt(ENC3_A_PIN), ISR_enc3, RISING);
   attachInterrupt(digitalPinToInterrupt(ENC4_A_PIN), ISR_enc4, RISING);
 }
-
-// ---------------- Encoder Reading Functions ----------------
-long getM1Encoder() {
-  long temp;
-  noInterrupts();
-  temp = encCount1;
-  interrupts();
-  return temp;
-}
-
-long getM2Encoder() {
-  long temp;
-  noInterrupts();
-  temp = encCount2;
-  interrupts();
-  return temp;
-}
-
-long getM3Encoder() {
-  long temp;
-  noInterrupts();
-  temp = encCount3;
-  interrupts();
-  return temp;
-}
-
-long getM4Encoder() {
-  long temp;
-  noInterrupts();
-  temp = encCount4;
-  interrupts();
-  return temp;
-}

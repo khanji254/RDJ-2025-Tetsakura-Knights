@@ -1,68 +1,44 @@
-# Arduino Mega Robot Controller - Millis-Based System
+# Arduino Mega Robot Controller - PlatformIO Project
 
-A comprehensive robot controller for Arduino Mega 2560 with **cooperative multitasking** using millis() timing for optimal memory usage and reliability.
-
-## ✨ Key Features
-- **Memory Optimized**: Uses only 47.5% of available RAM (3888/8192 bytes)
-- **Cooperative Multitasking**: Efficient millis()-based task scheduling
-- **ESP8266 Integration**: Web control via UART communication 
-- **4-Motor Control**: Individual wheel control with TB6612/L298N drivers
-- **Rich Sensor Suite**: MPU6050 DMP, ultrasonics, color sensor, encoders
-- **Real-time Communication**: Serial debugging and ESP8266 command interface
+This is a modularized Arduino Mega robot controller designed for PlatformIO. The robot features 4 motors with TB6612 drivers, 4 encoders for odometry, and UART communication with an ESP-01 module.
 
 ## Project Structure
 
 ```
-├── platformio.ini          # PlatformIO configuration (millis-based, no FreeRTOS)
+├── platformio.ini          # PlatformIO configuration
 ├── include/
-│   ├── config.h            # Hardware pin definitions and constants
-│   ├── millis_config.h     # Timing intervals and data structures
-│   ├── motor_control.h     # Motor control declarations
-│   ├── encoder.h           # Encoder handling declarations
-│   ├── odometry.h          # Odometry calculations declarations
-│   ├── command_parser.h    # Serial command processing declarations
-│   ├── sensor_manager.h    # Sensor management declarations
-│   └── mpu_dmp.h          # MPU6050 DMP integration
+│   └── config.h            # Hardware pin definitions and constants
 ├── src/
-│   ├── main.cpp            # Millis-based cooperative multitasking main loop
+│   ├── main.cpp            # Main Arduino program
 │   ├── motor_control.cpp   # Motor control implementation
 │   ├── encoder.cpp         # Encoder handling and ISRs
 │   ├── odometry.cpp        # Odometry calculations and reporting
-│   ├── command_parser.cpp  # Serial command processing
-│   ├── sensor_manager.cpp  # Sensor data collection
-│   └── mpu_dmp.cpp        # MPU6050 DMP implementation
+│   └── command_parser.cpp  # Serial command processing
+├── motor_control.h         # Motor control header (will be moved)
+├── encoder.h              # Encoder header (will be moved)
+├── odometry.h             # Odometry header (will be moved)
+└── command_parser.h       # Command parser header (will be moved)
 ```
 
-## System Architecture
-- **Cooperative Multitasking**: Uses millis()-based timing for task scheduling
-- **Memory Efficient**: 47.5% RAM usage (3888/8192 bytes)  
-- **Task Timing**: 
-  - Communication: 100Hz (10ms intervals)
-  - Motor Control: 50Hz (20ms intervals)
-  - Sensor Reading: 20Hz (50ms intervals)
-  - Status Updates: 1Hz (1000ms intervals)
+## Features
+
+- **Motor Control**: 4-motor differential drive with TB6612 motor drivers
+- **Encoders**: 4 quadrature encoders with interrupt-driven counting
+- **Odometry**: Real-time position and velocity calculation
+- **Communication**: UART-based command interface (115200 baud)
+- **Modular Design**: Clean separation of concerns across multiple files
 
 ## Hardware Configuration
 
-### Motors (Pure TB6612 Configuration)
-**All 4 Motors use TB6612 Drivers for Better Performance:**
-
-**TB6612 Driver #1 (Front Motors):**
+### Motors (Mixed Drivers)
+**Front Motors (TB6612 Driver):**
 - Motor 1 (Front Left): PWM=3, IN1=22, IN2=23
 - Motor 2 (Front Right): PWM=5, IN1=24, IN2=25 *(reversed in code)*
+- Standby Pin: 40
 
-**TB6612 Driver #2 (Rear Motors):**
-- Motor 3 (Rear Left): PWM=6, IN1=26, IN2=27
-- Motor 4 (Rear Right): PWM=9, IN1=28, IN2=29 *(inverted)*
-
-**Shared Standby Control:**
-- STBY=40 (controls both TB6612 drivers - HIGH=enabled)
-
-**Benefits of Pure TB6612:**
-- Higher efficiency (95% vs 70% for L298N)
-- Better heat dissipation
-- Lower voltage drop
-- More precise control
+**Rear Motors (L298N Driver):**
+- Motor 3 (Rear Left - Motor A): ENA=6, IN1=26, IN2=27 → OUT1/OUT2
+- Motor 4 (Rear Right - Motor B): ENB=9, IN3=28, IN4=29 → OUT3/OUT4 *(inverted)*
 
 ### Encoders
 - Encoder 1: A=2 (interrupt), B=30
