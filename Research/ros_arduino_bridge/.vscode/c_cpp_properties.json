@@ -1,0 +1,64 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/src",
+                "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/.pio/libdeps/megaatmega2560/MPU6050/src",
+                "C:/Users/user/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/.pio/libdeps/megaatmega2560/Servo/src",
+                "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/.pio/libdeps/megaatmega2560/AccelStepper/src",
+                "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/.pio/libdeps/megaatmega2560/ArduinoJson/src",
+                "C:/Users/user/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/user/.platformio/packages/framework-arduino-avr/variants/mega",
+                "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/.pio/libdeps/megaatmega2560/Stepper/src",
+                "C:/Users/user/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "C:/Users/user/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "C:/Users/user/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/user/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/src",
+                    "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/.pio/libdeps/megaatmega2560/MPU6050/src",
+                    "C:/Users/user/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/.pio/libdeps/megaatmega2560/Servo/src",
+                    "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/.pio/libdeps/megaatmega2560/AccelStepper/src",
+                    "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/.pio/libdeps/megaatmega2560/ArduinoJson/src",
+                    "C:/Users/user/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/user/.platformio/packages/framework-arduino-avr/variants/mega",
+                    "e:/Comp_Stuff/Glenn_s Shtuff/Projects/RDJ_2025/Research/ros_arduino_bridge/.pio/libdeps/megaatmega2560/Stepper/src",
+                    "C:/Users/user/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "C:/Users/user/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "C:/Users/user/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/user/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60118",
+                "ARDUINO_AVR_MEGA2560",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega2560__",
+                ""
+            ],
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++11",
+            "compilerPath": "C:/Users/user/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=atmega2560",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
